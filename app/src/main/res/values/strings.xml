@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">weather</string>
-    <string name="PREFERENCE_KEY">1234</string>
+    <string name="PREFERENCE_KEY">1234aa</string>
 </resources>

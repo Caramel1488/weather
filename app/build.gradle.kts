@@ -2,6 +2,7 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("androidx.navigation.safeargs")
+    kotlin("plugin.serialization") version "1.7.0"
 }
 
 android {
@@ -80,4 +81,10 @@ dependencies {
     implementation ("com.squareup.retrofit2:converter-gson:$retrofitVersion")
 
     implementation ("com.google.android.gms:play-services-location:21.0.1")
+
+    implementation ("com.fasterxml.jackson.module:jackson-module-kotlin:2.13.3")
+    implementation ("com.google.code.gson:gson:2.9.0")
+    implementation("org.json:json:20220320")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.3")
+    testImplementation(kotlin("test"))
 }

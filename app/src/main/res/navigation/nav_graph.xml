@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.test.weather.main.MainFragment"
+        android:label="MainFragment"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_mainFragment_to_detailDayFragment"
+            app:destination="@id/detailDayFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailDayFragment"
+        android:name="com.test.weather.detail.DetailDayFragment"
+        android:label="DetailDayFragment"
+        tools:layout="@layout/fragment_detail_day">
+        <argument
+            android:name="forecastDay"
+            app:nullable="true"
+            app:argType="com.test.weather.data.ForecastDayData" />
+    </fragment>
+</navigation>
