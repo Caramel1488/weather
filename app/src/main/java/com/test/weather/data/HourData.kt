@@ -8,4 +8,5 @@ data class HourData(
     @SerializedName("time") val time: String,
     @SerializedName("temp_c") val temperature: String,
     @SerializedName("wind_kph") val wind: String,
+    @SerializedName("condition") val condition: ConditionData
 )

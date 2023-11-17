@@ -3,6 +3,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("androidx.navigation.safeargs")
     kotlin("plugin.serialization") version "1.7.0"
+    id("com.google.devtools.ksp")
 }
 
 android {
@@ -87,4 +88,15 @@ dependencies {
     implementation("org.json:json:20220320")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.3")
     testImplementation(kotlin("test"))
+
+    //RoomDao
+    val room_version = "2.6.0"
+
+    implementation("androidx.room:room-runtime:$room_version")
+    annotationProcessor("androidx.room:room-compiler:$room_version")
+
+    // To use Kotlin annotation processing tool (kapt)
+    ksp("androidx.room:room-compiler:$room_version")
+    // To use Kotlin Symbol Processing (KSP)
+    ksp("androidx.room:room-compiler:$room_version")
 }

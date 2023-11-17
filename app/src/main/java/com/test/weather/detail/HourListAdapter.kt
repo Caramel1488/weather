@@ -2,6 +2,7 @@ package com.test.weather.detail
 
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
@@ -9,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.skillbox.github.utils.inflate
 import com.test.weather.R
 import com.test.weather.data.HourData
+import com.test.weather.data.WeatherIconCode
 
 class HourListAdapter(): ListAdapter<HourData, HourListAdapter.Holder>(RepoDiffUtilCallback()) {
 
@@ -31,6 +33,8 @@ class HourListAdapter(): ListAdapter<HourData, HourListAdapter.Holder>(RepoDiffU
     ) : RecyclerView.ViewHolder(containerView) {
 
         fun bind(hour: HourData) {
+            val iconImageView = containerView.findViewById<ImageView>(R.id.iconImageView)
+            iconImageView.setImageResource(WeatherIconCode.BLIZZARD.getIconByCode(hour.condition.code))
             containerView.findViewById<TextView>(R.id.hourTextView).text = hour.time.takeLast(5)
             containerView.findViewById<TextView>(R.id.temperatureTextView).text =
                 "${hour.temperature} C°"

@@ -2,6 +2,7 @@ package com.test.weather.detail
 
 import android.os.Bundle
 import android.view.View
+import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.fragment.app.Fragment
@@ -12,10 +13,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.skillbox.github.utils.autoCleared
 import com.test.weather.R
-import com.test.weather.data.DayData
 import com.test.weather.data.ForecastDayData
+import com.test.weather.data.WeatherIconCode
 
-class DetailDayFragment(): Fragment(R.layout.fragment_detail_day){
+class DetailDayFragment: Fragment(R.layout.fragment_detail_day){
 
     private val args: DetailDayFragmentArgs by navArgs()
 
@@ -25,7 +26,6 @@ class DetailDayFragment(): Fragment(R.layout.fragment_detail_day){
 
     private lateinit var hourList: RecyclerView
 
-    //private var dayListAdapter: DayListAdapter by autoCleared()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -47,6 +47,8 @@ class DetailDayFragment(): Fragment(R.layout.fragment_detail_day){
 
     private fun setData(dayData: ForecastDayData) {
         with(requireView()){
+            val iconImageView = findViewById<ImageView>(R.id.iconImageView)
+            iconImageView.setImageResource(WeatherIconCode.BLIZZARD.getIconByCode(dayData.day.condition.code))
             findViewById<TextView>(R.id.dateTextView).text = dayData.date
             findViewById<TextView>(R.id.cloudTextView).text = dayData.day.cloud + " %"
             findViewById<TextView>(R.id.humidityTextView).text = dayData.day.humidity + " %"
@@ -59,7 +61,7 @@ class DetailDayFragment(): Fragment(R.layout.fragment_detail_day){
         viewModel.putData(args.forecastDay!!)
     }
 
-    fun initAdapter(){
+    private fun initAdapter(){
         hourListAdapter = HourListAdapter()
         hourList = requireView().findViewById(R.id.hourList)
         with(hourList){

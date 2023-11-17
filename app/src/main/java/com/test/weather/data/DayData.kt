@@ -9,5 +9,6 @@ data class DayData(
     @SerializedName("mintemp_c") val minTemp: String,
     @SerializedName("maxwind_kph") val maxWind: String,
     @SerializedName("avghumidity") val humidity: String,
-    @SerializedName("daily_chance_of_rain") val cloud: String
+    @SerializedName("daily_chance_of_rain") val cloud: String,
+    @SerializedName("condition") val condition: ConditionData
 )

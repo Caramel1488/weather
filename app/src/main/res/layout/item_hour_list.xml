@@ -1,51 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    xmlns:tools="http://schemas.android.com/tools"
     android:gravity="center"
     android:orientation="vertical"
     android:padding="16dp">
 
     <TextView
         android:id="@+id/hourTextView"
-        tools:text = "00:00"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/black"
-        android:textSize="28sp"/>
+        android:textSize="28sp"
+        tools:text="00:00" />
+
+    <ImageView
+        android:id="@+id/iconImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        tools:src="@drawable/icon_113" />
 
     <ImageView
         android:id="@+id/temperatureImageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/baseline_device_thermostat_24"
-        android:layout_marginTop="16dp"/>
+        android:layout_marginTop="16dp"
+        android:src="@drawable/baseline_device_thermostat_24" />
 
     <TextView
         android:id="@+id/temperatureTextView"
-        tools:text = "00:00"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:textColor="@color/black"
         android:textSize="20sp"
-        android:layout_marginTop="8dp"/>
+        tools:text="00:00" />
 
     <ImageView
         android:id="@+id/windImageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/baseline_air_24"
-        android:layout_marginTop="16dp"/>
+        android:layout_marginTop="16dp"
+        android:src="@drawable/baseline_air_24" />
 
     <TextView
         android:id="@+id/windTextView"
-        tools:text = "00:00"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:textColor="@color/black"
         android:textSize="20sp"
-        android:layout_marginTop="8dp"/>
+        tools:text="00:00" />
 
 
 </LinearLayout>

@@ -4,6 +4,6 @@ import com.google.gson.annotations.SerializedName
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class CurrentWeatherData(
-    @SerializedName("temp_c") val temperature: String
+data class ConditionData(
+    @SerializedName("code") val code: Int
 )
